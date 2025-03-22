@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->string('isbn');
+            $table->string('isbn')->unique();
             $table->year('published_year');
             $table->integer('stock');
             $table->foreignId('category_id')->constrained('categories');
