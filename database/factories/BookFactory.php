@@ -22,6 +22,7 @@ class BookFactory extends Factory
             'author' => fake()->name(),
             'isbn' => fake()->unique()->numberBetween(1, 9999999999999),
             'published_year' => fake()->year(),
+            'description' => fake()->text(),
             'stock' => fake()->randomDigitNotZero(),
             'category_id' => Category::factory(),
         ];
