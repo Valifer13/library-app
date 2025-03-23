@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -7,9 +8,21 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
+
+Route::get('/dashboard', [BookController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::view('wishlist', 'wishlist')
+    ->middleware(['auth', 'verified'])
+    ->name('wishlist');
+
+Route::view('cart', 'cart')
+    ->middleware(['auth', 'verified'])
+    ->name('cart');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
