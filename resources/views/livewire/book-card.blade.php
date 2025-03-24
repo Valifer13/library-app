@@ -1,5 +1,5 @@
 <div class="border border-gray-500 rounded-lg">
-    <div class="flex justify-center bg-[#EDEDED] rounded-t-md py-3">
+    <div class="flex justify-center bg-[#EDEDED] dark:bg-gray-700 rounded-t-md py-3">
         <div class="relative">
             <img src="https://placehold.co/100x150" alt="">
             <button class="absolute top-0 right-3 cursor-pointer">
@@ -7,8 +7,8 @@
             </button>
         </div>
     </div>
-    <div class="py-2 px-3 grid gap-2">
-        <p><a href="#" class="md:text-xs text-xs text-gray-400 hover:underline me-1">{{ $book->author }}</a> | <a href="#" class="bg-blue-100 hover:bg-gray-200 py-1 px-3 rounded-full ms-1 text-sm">{{ $book->category->name }}</a></p>
+    <div class="p-3 grid gap-2">
+        <p class="flex justify-between items-center"><a href="#" class="text-xs text-gray-600 dark:text-gray-400 hover:underline">{{ $book->author }}</a><a href="#" class="bg-blue-300 hover:bg-blue-400 py-1 px-3 rounded-full text-sm">{{ $book->category->name }}</a></p>
         <h1 class="sm:text-base md:text-lg min-h-14 font-medium">{{ Str::limit($book->title, 40) }}</h1>
         <p class="max-h-10 overflow-y-auto scrollbar-hide">{{ Str::limit($book->description, 75) }}</p>
     </div>

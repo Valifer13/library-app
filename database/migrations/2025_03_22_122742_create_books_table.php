@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('isbn')->unique();
+            $table->string('cover');
             $table->string('published_year');
             $table->text('description');
             $table->integer('stock');

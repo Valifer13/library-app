@@ -14,6 +14,7 @@ class Book extends Model
         'title',
         'author',
         'isbn',
+        'cover',
         'published_year',
         'description',
         'stock',
