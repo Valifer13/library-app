@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
+            AdminSeeder::class,
             CategorySeeder::class,
         ]);
         Book::factory(100)->recycle(Category::all())->create();
