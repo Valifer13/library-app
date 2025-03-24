@@ -13,6 +13,6 @@ class WishlistSeeder extends Seeder
      */
     public function run(): void
     {
-        Wishlist::factory(10)->create();
+        Wishlist::factory(100)->create();
     }
 }
