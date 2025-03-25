@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -8,15 +9,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Route::view('dashboard', 'dashboard')
-//     ->middleware(['auth', 'verified'])
-//     ->name('dashboard');
-
 Route::get('/dashboard', [BookController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::get('/wishlist', [BookController::class, 'wishlist'])
+Route::get('/wishlist', [WishlistController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('wishlist');
 
