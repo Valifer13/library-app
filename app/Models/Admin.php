@@ -15,4 +15,10 @@ class Admin extends Model
         'email',
         'password'
     ];
+
+    protected $hidden = ['password'];
+
+    protected $casts = [
+        'password' => 'hashed'
+    ];
 }
