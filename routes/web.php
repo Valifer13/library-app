@@ -16,7 +16,7 @@ Route::get('/dashboard', [BookController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('wishlist', 'wishlist')
+Route::get('/wishlist', [BookController::class, 'wishlist'])
     ->middleware(['auth', 'verified'])
     ->name('wishlist');
 
