@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Loan extends Model
 {
@@ -19,4 +20,19 @@ class Loan extends Model
         'return_date',
         'status'
     ];
+
+    public function book(): BelongsTo
+    {
+        return $this->belongsTo(Book::class);
+    }
+    
+    public function user(): Belongsto
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function admin(): BelongsTo
+    {
+        return $this->belongsTo(Admin::class);
+    }
 }
