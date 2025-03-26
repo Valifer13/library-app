@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
         ]);
         Book::factory(100)->recycle(Category::all())->create();
-        $this->call(WishlistSeeder::class);
+        $this->call([WishlistSeeder::class, LoanSeeder::class]);
     }
 }
