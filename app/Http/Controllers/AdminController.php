@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function loginForm()
     {
-        return view('admin.login');
+        return view('admin.auth.login');
     }
 
     public function login(Request $request)
@@ -24,11 +24,6 @@ class AdminController extends Controller
         }
 
         return back()->withErrors(['email' => 'Email atau password salah']);
-    }
-
-    public function dashboard()
-    {
-        return view('admin.dashboard');
     }
 
     public function logout()
