@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\BookController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -11,7 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/dashboard', [BookController::class, 'index'])
+Route::get('/dashboard', fn () => view('dashboard'))
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
@@ -38,7 +37,7 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
-        Route::get('/book-manage', [AdminDashboardController::class, 'bookManage'])->name('admin.book-manage');
+        Route::get('/books', [AdminDashboardController::class, 'bookManage'])->name('admin.book-manage');
         Route::get('/loans-list', [AdminDashboardController::class, 'loansList'])->name('admin.loans-list');
         Route::get('/notification', [AdminDashboardController::class, 'notification'])->name('admin.notification');
         Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');

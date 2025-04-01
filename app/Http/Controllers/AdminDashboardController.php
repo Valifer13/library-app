@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -13,7 +14,13 @@ class AdminDashboardController extends Controller
 
     public function bookManage()
     {
-        return view('admin.book-manage');
+        $books = Book::latest();
+
+        if (request('search')) {
+            $books->where('title', 'like', '%' . request('search') . '%');
+        }
+        
+        return view('admin.books', ['books' => $books->get()]);
     }
 
     public function loansList()

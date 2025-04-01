@@ -24,7 +24,7 @@
 
         <flux:navlist variant="outline">
             <flux:navlist.item icon="window" href="{{ route('admin.dashboard') }}">Main Dashboard</flux:navlist.item>
-            <flux:navlist.item icon="book-open" href="{{ route('admin.book-manage') }}">Book Manage</flux:navlist.item>
+            <flux:navlist.item icon="book-open" href="{{ route('admin.book-manage') }}">Books Manage</flux:navlist.item>
             <flux:navlist.item icon="list-bullet" href="{{ route('admin.loans-list') }}">Loans List</flux:navlist.item>
             <flux:navlist.item icon="bell" badge="12" href="{{ route('admin.notification') }}">Notification</flux:navlist.item>
 
